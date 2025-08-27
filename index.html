@@ -25,17 +25,16 @@
     cursor: pointer;
   }
 
-  /* On hover → animate */
   .hover-effect:hover {
     animation: moveBlink 0.8s infinite alternate;
-    color: #ddd; /* optional color change */
+    color: #ddd;
   }
 
   @keyframes moveBlink {
     0%   { transform: translateX(0); opacity: 1; }
-    25%  { transform: translateX(5px); opacity: 0.7; }
+    25%  { transform: translateX(5px); opacity: 0.6; }
     50%  { transform: translateX(-5px); opacity: 1; }
-    75%  { transform: translateX(3px); opacity: 0.5; }
+    75%  { transform: translateX(3px); opacity: 0.4; }
     100% { transform: translateX(0); opacity: 1; }
   }
 
@@ -274,12 +273,12 @@
 
   /* PARTNERS CAROUSEL */
   .partners-slider {
-    max-width: 90%;
+    max-width: 1000px;
     margin: 40px auto;
     position: relative;
     overflow: hidden;
     background: #fff;
-    padding: 20px 0 50px;
+    padding: 20px 0 40px;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   }
@@ -289,8 +288,10 @@
     will-change: transform;
   }
   .partners-track img {
+    flex: 0 0 33.33%;
     max-width: clamp(120px, 20vw, 180px);
-    margin: 15px;
+    margin: 0 auto;
+    padding: 10px;
     object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.7;
@@ -312,9 +313,9 @@
     border: none;
     color: #fff;
     font-size: clamp(1.2rem, 3vw, 1.6rem);
-    width: 32px;
-    height: 32px;
-    line-height: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     padding: 0;
     cursor: pointer;
     border-radius: 50%;
@@ -327,23 +328,25 @@
     background: #0056b3;
   }
   .partners-slider button.prev-btn {
-    left: 10px;
+    left: 15px;
   }
   .partners-slider button.next-btn {
-    right: 10px;
+    right: 15px;
   }
   .dots-container {
-    margin-top: 15px;
+    margin-top: 10px;
     text-align: center;
     position: absolute;
-    bottom: 15px;
+    bottom: 10px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
   }
   .dots-container .dot {
     display: inline-block;
-    width: 11px;
-    height: 11px;
-    margin: 0 7px;
+    width: 10px;
+    height: 10px;
     background-color: #bbb;
     border-radius: 50%;
     cursor: pointer;
@@ -480,10 +483,13 @@
       grid-template-columns: 1fr;
     }
     .partners-slider button.prev-btn {
-      left: 5px;
+      left: 10px;
     }
     .partners-slider button.next-btn {
-      right: 5px;
+      right: 10px;
+    }
+    .partners-track img {
+      max-width: clamp(100px, 18vw, 160px);
     }
     #location > div {
       grid-template-columns: 1fr;
@@ -519,7 +525,7 @@
       height: 150px;
     }
     .partners-track img {
-      max-width: 100px;
+      max-width: clamp(80px, 16vw, 120px);
     }
   }
 </style>
@@ -539,7 +545,7 @@
 
 <!-- Hero -->
 <header class="hero">
-<h1 class="hover-effect">Safety. Compliance. Data-Driven Peace of Mind.</h1>
+  <h1 class="hover-effect">Safety. Compliance. Data-Driven Peace of Mind.</h1>
   <p>Certified Electrical Test & Tag | Fire Safety | Smoke Alarm Solutions | Data Insights</p>
   <button class="cta-btn" onclick="document.querySelector('.form-container').scrollIntoView({behavior:'smooth'})">Get a Free Safety Check →</button>
   <div class="form-container">
@@ -564,53 +570,24 @@
 <br><br><br>
 <!-- About -->
 <section style="height: 50vh; position: relative; overflow: hidden;">
-
-  <!-- Background Video -->
   <video autoplay muted loop playsinline 
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
     <source src="/media/7818-204506418_tiny.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-
-  <!-- Right Aligned Content -->
   <div style="position: relative; z-index: 1; text-align: right; padding: 40px; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
-    
     <h2 
       style="display:inline-block; cursor:pointer; transition:all 0.3s ease-in-out; color:#f5f5f5; font-size:40px; margin-bottom: 20px;" 
       onmouseover="this.style.animation='moveBlink 0.8s infinite alternate'; this.style.color='#fff';" 
       onmouseout="this.style.animation=''; this.style.color='#fff';">
       About Us
     </h2>
-
     <p style="color:#f5f5f5; font-size:22px; max-width:600px; line-height:1.5; text-align:justify;font-weight: 400;">
       With over a decade of experience, Safety & Compliance Services delivers certified safety solutions 
       and data-driven insights to ensure your workplace is secure and compliant, letting you focus on growth.
     </p>
   </div>
-
-  <!-- Inline Keyframes -->
-  <style>
-    @keyframes moveBlink {
-      0%   { transform: translateX(0); opacity: 1; }
-      25%  { transform: translateX(5px); opacity: 0.6; }
-      50%  { transform: translateX(-5px); opacity: 1; }
-      75%  { transform: translateX(3px); opacity: 0.4; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-  </style>
 </section>
-
-
-<!-- Keyframes -->
-<style>
-@keyframes moveBlink {
-  0%   { transform: translateX(0); opacity: 1; }
-  25%  { transform: translateX(5px); opacity: 0.6; }
-  50%  { transform: translateX(-5px); opacity: 1; }
-  75%  { transform: translateX(3px); opacity: 0.4; }
-  100% { transform: translateX(0); opacity: 1; }
-}
-</style>
 
 <!-- Trusted -->
 <section class="section" id="trusted">
@@ -638,40 +615,25 @@
 <section class="section" id="partners" style="padding:40px 5%; background:#f5f5f5; text-align:center; position:relative;">
   <h2 style="margin-bottom:10px;">Our Partners</h2>
   <p class="lead" style="margin-bottom:20px; color:#555;">Collaborating with trusted brands for safety & data excellence.</p>
-
-  <div class="partners-slider" style="position:relative; overflow:hidden; max-width:1000px; margin:0 auto;">
-    <!-- Prev Button -->
-    <button class="prev-btn" aria-label="Previous" 
-      style="position:absolute; top:50%; left:10px; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; border-radius:50%; width:40px; height:40px; font-size:20px; cursor:pointer; z-index:2;">
-      &#8249;
-    </button>
-
-    <!-- Slider Track -->
-    <div class="partners-track" 
-      style="display:flex; transition:transform 0.6s ease; will-change:transform;">
-      <img src="https://hblapis.cmots.com/complogodata/IImagesNew/ITC_29088800077_301.png" alt="ITC" style="flex:0 0 25%; max-width:25%; object-fit:contain; padding:20px;"/>
-      <img src="https://img.etimg.com/thumb/width-420,height-315,imgsize-453381,resizemode-75,msid-123097888/markets/stocks/earnings/godfrey-phillips-india-q1-results-net-profit-jumps-56-to-rs-356-crore/godfrey-phillips-q1-results-net-profit-jumps-56-to-rs-356-crore-to-issue-21-bonus-shares.jpg" alt="Godfrey Phillips" style="flex:0 0 25%; max-width:25%; object-fit:contain; padding:20px;"/>
-      <img src="https://img.favpng.com/9/0/4/v-guard-corporate-office-v-guard-industries-ltd-company-manufacturing-png-favpng-Xu97EwmRM4ZhH93911uChaZ4q.jpg" alt="Cease Fire" style="flex:0 0 25%; max-width:25%; object-fit:contain; padding:20px;"/>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIghZJCd7WFx6f3jIQ9A_eWu6tbJGoXzh-A&s" alt="Siemens" style="flex:0 0 25%; max-width:25%; object-fit:contain; padding:20px;"/>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtC3bk82uvXDNIHUxUC8kpMYidmhapxVJqOA&s" alt="Other1" style="flex:0 0 25%; max-width:25%; object-fit:contain; padding:20px;"/>
-      <img src="https://indiancompanies.in/wp-content/uploads/2025/06/Crompton-Greaves-Consumer-Electricals-Ltd.png" alt="Crompton" style="flex:0 0 25%; max-width:25%; object-fit:contain; padding:20px;"/>
-      <img src="https://www.kanexfire.com/buyonline/pub/media/logo/websites/1/Header-logo_1_.png" alt="Kanex" style="flex:0 0 25%; max-width:25%; object-fit:contain; padding:20px;"/>
-      <img src="https://www.armorfire.in/public/frontend/assets/images/armorfire-whitelogo.png" alt="ArmorFire" style="flex:0 0 25%; max-width:25%; object-fit:contain; padding:20px;"/>
+  <div class="partners-slider">
+    <button class="prev-btn" aria-label="Previous">&#8249;</button>
+    <div class="partners-track">
+      <img src="https://hblapis.cmots.com/complogodata/IImagesNew/ITC_29088800077_301.png" alt="ITC" />
+      <img src="https://img.etimg.com/thumb/width-420,height-315,imgsize-453381,resizemode-75,msid-123097888/markets/stocks/earnings/godfrey-phillips-india-q1-results-net-profit-jumps-56-to-rs-356-crore/godfrey-phillips-q1-results-net-profit-jumps-56-to-rs-356-crore-to-issue-21-bonus-shares.jpg" alt="Godfrey Phillips" />
+      <img src="https://img.favpng.com/9/0/4/v-guard-corporate-office-v-guard-industries-ltd-company-manufacturing-png-favpng-Xu97EwmRM4ZhH93911uChaZ4q.jpg" alt="Cease Fire" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScIghZJCd7WFx6f3jIQ9A_eWu6tbJGoXzh-A&s" alt="Siemens" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtC3bk82uvXDNIHUxUC8kpMYidmhapxVJqOA&s" alt="Other1" />
+      <img src="https://indiancompanies.in/wp-content/uploads/2025/06/Crompton-Greaves-Consumer-Electricals-Ltd.png" alt="Crompton" />
+      <img src="https://www.kanexfire.com/buyonline/pub/media/logo/websites/1/Header-logo_1_.png" alt="Kanex" />
+      <img src="https://www.armorfire.in/public/frontend/assets/images/armorfire-whitelogo.png" alt="ArmorFire" />
     </div>
-
-    <!-- Next Button -->
-    <button class="next-btn" aria-label="Next" 
-      style="position:absolute; top:50%; right:10px; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; border-radius:50%; width:40px; height:40px; font-size:20px; cursor:pointer; z-index:2;">
-      &#8250;
-    </button>
-
-    <!-- Dots -->
-    <div class="dots-container" aria-label="Slider navigation dots" 
-      style="margin-top:15px; display:flex; justify-content:center; gap:8px;"></div>
+    <button class="next-btn" aria-label="Next">&#8250;</button>
+    <div class="dots-container" aria-label="Slider navigation dots"></div>
   </div>
 </section>
+
 <!-- Services -->
-<section class="section" id="services"  >
+<section class="section" id="services">
   <h2>Our Core Safety Services</h2>
   <p class="lead">Comprehensive solutions to ensure workplace safety and compliance with industry standards, backed by data-driven insights.</p>
   <div class="grid">
@@ -765,44 +727,33 @@
   id="counter" 
   style="background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover; color:white; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:60px 20px;"
 >
-  <!-- Dark Overlay -->
   <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:0;"></div>
-
-  <!-- Title -->
   <h2 style="position:relative; z-index:1; margin-bottom:40px; color:#ddd; font-size:clamp(1.5rem, 3vw, 2rem);">
     Our Achievements
   </h2>
-
-  <!-- Counter Grid -->
   <div class="counter-grid" style="position:relative; z-index:1; display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:30px; max-width:1000px; width:100%;">
-    
     <div class="counter-item" style="padding:20px; background:rgba(255,255,255,0.1); border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
       <div class="counter-number" data-target="200000" style="font-size:2rem; font-weight:bold;">0</div>
       <div class="counter-label" style="margin-top:8px; font-size:1rem;">Users</div>
     </div>
-
     <div class="counter-item" style="padding:20px; background:rgba(255,255,255,0.1); border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
       <div class="counter-number" data-target="7000" style="font-size:2rem; font-weight:bold;">0</div>
       <div class="counter-label" style="margin-top:8px; font-size:1rem;">Courses</div>
     </div>
-
     <div class="counter-item" style="padding:20px; background:rgba(255,255,255,0.1); border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
       <div class="counter-number" data-target="15000000" style="font-size:2rem; font-weight:bold;">0</div>
       <div class="counter-label" style="margin-top:8px; font-size:1rem;">Visitors</div>
     </div>
-
     <div class="counter-item" style="padding:20px; background:rgba(255,255,255,0.1); border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
       <div class="counter-number" data-target="1000000" style="font-size:2rem; font-weight:bold;">0</div>
       <div class="counter-label" style="margin-top:8px; font-size:1rem;">Certificates</div>
     </div>
-
   </div>
 </section>
+
 <!-- Location -->
 <section id="location" style="padding:40px 5%; background:#f5f5f5;">
   <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; align-items:center; max-width:min(90%,1200px); margin:0 auto;">
-    
-    <!-- Location Info -->
     <div style="padding:20px;">
       <h2 style="margin-bottom:20px;">Our Location</h2>
       <p style="font-size:clamp(0.9rem, 2.5vw, 1rem); color:#333; margin-bottom:15px;">
@@ -815,8 +766,6 @@
         📞 +61 2 9876 5432
       </p>
     </div>
-    
-    <!-- Google Map -->
     <div style="width:100%; height:clamp(250px, 50vw, 400px); border-radius:12px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.365621387725!2d151.20828447572977!3d-33.86770201974092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3e34a4d1d9%3A0x2c6f7e7e0c65b5a!2s20%20Martin%20Pl%2C%20Sydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sau!4v1692709440000!5m2!1sen!2sau" 
@@ -828,7 +777,6 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
-
   </div>
 </section>
 
@@ -872,21 +820,15 @@
 <!-- Contact Info -->
 <section id="contact-info" style="padding:40px 5%; background:#222; color:white;">
   <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px; align-items:center; text-align:center; max-width:min(90%,1200px); margin:0 auto;">
-    
-    <!-- Logo -->
     <div>
       <img src="https://cdn-icons-png.flaticon.com/512/5332/5332306.png" alt="Company Logo" style="max-width:100px; margin:auto; display:block;"/>
     </div>
-    
-    <!-- Address -->
     <div>
       <h4 style="margin-bottom:8px;">Our Address</h4>
       <p style="margin:0; font-size:clamp(0.85rem, 2vw, 0.95rem); color:#ddd;">
         Level 10, 20 Martin Place, Sydney, NSW 2000, Australia
       </p>
     </div>
-    
-    <!-- Contact Info -->
     <div>
       <h4 style="margin-bottom:8px;">Contact Us</h4>
       <p style="margin:0; font-size:clamp(0.85rem, 2vw, 0.95rem); color:#ddd;">
@@ -898,7 +840,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- CTA -->
 <div class="cta-banner" style="background-color: grey;padding:20px; display:flex; justify-content:center; align-items:center; color:#ccc;">
@@ -921,43 +862,43 @@
   });
 
   // Partners carousel
-   const track = document.querySelector('.partners-track');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-  const dotsContainer = document.querySelector('.dots-container');
-  const slides = document.querySelectorAll('.partners-track img');
+  const track = document.querySelector(".partners-track");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  const dotsContainer = document.querySelector(".dots-container");
+  const slides = document.querySelectorAll(".partners-track img");
   
   let index = 0;
-  const slidesToShow = 2; // number of logos visible at once
+  const slidesToShow = 3;
   const totalSlides = slides.length;
+  const totalDots = Math.max(1, Math.ceil(totalSlides - slidesToShow + 1));
 
   // Create dots
-  const totalDots = Math.ceil(totalSlides / slidesToShow);
   for (let i = 0; i < totalDots; i++) {
-    const dot = document.createElement('span');
-    dot.style.cssText = "width:10px;height:10px;border-radius:50%;background:#bbb;display:inline-block;cursor:pointer;";
-    if (i === 0) dot.style.background = "#333";
-    dot.addEventListener('click', () => goToSlide(i));
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goToSlide(i));
     dotsContainer.appendChild(dot);
   }
-  const dots = dotsContainer.querySelectorAll('span');
+  const dots = dotsContainer.querySelectorAll(".dot");
 
   const updateSlider = () => {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach((dot, i) => dot.style.background = i === index ? "#333" : "#bbb");
+    track.style.transform = `translateX(-${index * (100 / slidesToShow)}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
   };
 
   const goToSlide = (i) => {
-    index = i;
+    index = Math.max(0, Math.min(i, totalDots - 1));
     updateSlider();
   };
 
-  nextBtn.addEventListener('click', () => {
+  nextBtn.addEventListener("click", () => {
     index = (index + 1) % totalDots;
     updateSlider();
   });
 
-  prevBtn.addEventListener('click', () => {
+  prevBtn.addEventListener("click", () => {
     index = (index - 1 + totalDots) % totalDots;
     updateSlider();
   });
@@ -976,14 +917,15 @@
     if (endX < startX - 50) nextBtn.click();
     if (endX > startX + 50) prevBtn.click();
   });
+
   // Animate counters
-  const counters = document.querySelectorAll('.counter-number');
-  const speed = 200; // smaller = faster
+  const counters = document.querySelectorAll(".counter-number");
+  const speed = 200;
 
   const animateCounters = () => {
     counters.forEach(counter => {
       const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
+        const target = +counter.getAttribute("data-target");
         const count = +counter.innerText.replace(/,/g, "");
         const increment = Math.ceil(target / speed);
 
@@ -998,7 +940,6 @@
     });
   };
 
-  // Trigger animation when section is visible
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1008,7 +949,7 @@
     });
   }, { threshold: 0.5 });
 
-  observer.observe(document.querySelector('#counter'));
+  observer.observe(document.querySelector("#counter"));
 </script>
 </body>
 </html>
